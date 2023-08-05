@@ -4,9 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Report App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="wrapper">
+      <div class="app-container">
+        <h1>Weather App</h1>
+        <div class="tabs">
+          <p class="tab" userWeather>Your Weather</p>
+          <p class="tab" searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-parent-container">
+          <div class="grant-location">
+            <img
+              src="./assets/location.png"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <p>Grant Location Access</p>
+            <p>Allow Access to get Weather Information</p>
+            <button class="grant-btn" grant-access>Grant Access</button>
+          </div>
+
+          <form class="form-container" location-search-form>
+            <input location-search-input placeholder="Search for City..." />
+            <button class="search-btn" type="submit">
+              <img
+                src="./assets/search.png"
+                height="20"
+                width="20"
+                loading="lazy"
+              />
+            </button>
+          </form>
+
+          <div class="loading-screen">
+            <img src="./assets/loading.gif" width="150" height="150" />
+            <p>Loading</p>
+          </div>
+
+          <div class="user-weather-info">
+            <div class="name-container">
+              <p city-name></p>
+              <img country-flag />
+            </div>
+
+            <p weather-description></p>
+            <img weather-icon />
+            <p city-temperature></p>
+
+            <div class="parameters">
+              <div class="parameter">
+                <img src="./assets/wind.png" />
+                <p>Windspeed</p>
+                <p windspeed></p>
+              </div>
+              <div class="parameter">
+                <img src="./assets/humidity.png" />
+                <p>Humidity</p>
+                <p humidity></p>
+              </div>
+              <div class="parameter">
+                <img src="./assets/cloud.png" />
+                <p>Clouds</p>
+                <p cloudiness></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="error-class">
+            <img width=" 300" height="300" src="./assets/not-found.png" />
+            <h3>City not found!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

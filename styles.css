@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+:root {
+  --colorDark1: #112d4e;
+  --colorDark2: #3f72af;
+  --colorLight1: #dbe2ef;
+  --colorLight2: #f9f7f7;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  color: var(--colorLight2);
+  background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 30px;
+}
+
+.app-container {
+  width: 550px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  min-width: 550px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 1.75px;
+}
+
+.tab.current-tab {
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 4px;
+}
+
+.weather-parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block: 4rem;
+}
+
+.grant-btn {
+  all: unset;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: var(--colorDark2);
+  cursor: pointer;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+}
+
+.grant-location {
+  display: none;
+}
+
+.grant-location.activate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grant-location img {
+  margin-bottom: 2rem;
+}
+
+.grant-location p:first-of-type {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.grant-location p:last-of-type {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 1.75em;
+  letter-spacing: 0.75px;
+}
+
+.loading-screen {
+  display: none;
+}
+
+.loading-screen.activate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-screen p {
+  text-transform: uppercase;
+}
+
+.user-weather-info {
+  display: none;
+}
+
+.user-weather-info.activate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.user-weather-info p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.user-weather-info img {
+  width: 90px;
+  height: 90px;
+}
+
+.name-container p {
+  font-size: 2rem;
+}
+
+.name-container img {
+  height: 25px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.user-weather-info p[city-temperature] {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+.parameters {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.parameter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  min-width: 200px;
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 5px 0;
+}
+
+.parameter img {
+  width: 50px;
+  height: 50px;
+}
+
+.parameter p:first-of-type {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.parameter p:last-of-type {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.form-container {
+  display: none;
+}
+
+.form-container.activate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  width: 90%;
+  margin-bottom: 3rem;
+}
+
+.form-container.activate input {
+  all: unset;
+  height: 40px;
+  width: 80%;
+  padding: 0 20px;
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 10px;
+}
+
+.form-container.activate input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-container.activate input:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+  all: unset;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: var(--colorDark2);
+  cursor: pointer;
+}
+
+.error-class {
+  display: none;
+}
+
+.error-class.activate {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h3 {
+  text-align: center;
+}
