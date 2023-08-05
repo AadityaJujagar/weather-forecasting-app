@@ -241,12 +241,13 @@ h1 {
   display: none;
 }
 
+h3 {
+  text-align: center;
+}
+
 .error-class.activate {
+  z-index: 10;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-h3 {
-  text-align: center;
 }

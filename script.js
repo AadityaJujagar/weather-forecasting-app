@@ -58,19 +58,22 @@ async function fetchUserWeather(coordinates) {
   const { lat, lon } = coordinates;
   grantLocation.classList.remove("activate");
   loadingScreen.classList.add("activate");
+  errorClass.classList.remove("activate");
 
   try {
     const fetchedInfo = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     );
     const weatherData = await fetchedInfo.json();
+    if (!weatherData.sys) {
+      throw weatherData;
+    }
     loadingScreen.classList.remove("activate");
     userWeatherInfo.classList.add("activate");
     renderWeatherInfo(weatherData);
   } catch (error) {
     loadingScreen.classList.remove("activate");
-    console.log(error);
-    errorClassActivate();
+    errorClass.classList.add("activate");
   }
 }
 
@@ -107,7 +110,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    errorClassActivate();
+    errorClass.classList.add("activate");
   }
 }
 
@@ -131,17 +134,14 @@ async function fetchSearchWeather(city) {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
     const weatherData = await fetchedInfo.json();
+    if (!weatherData.sys) {
+      throw weatherData;
+    }
     loadingScreen.classList.remove("activate");
     userWeatherInfo.classList.add("activate");
     renderWeatherInfo(weatherData);
-    errorClassActivate();
   } catch (error) {
-    console.log(error);
+    loadingScreen.classList.remove("activate");
+    errorClass.classList.add("activate");
   }
-}
-
-function errorClassActivate() {
-  console.log("Invalid name of city input");
-  userWeatherInfo.classList.remove("activate");
-  errorClass.classList.add("activate");
 }
